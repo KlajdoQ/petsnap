@@ -12,9 +12,9 @@ class ConversationsController < ApplicationController
   end
   
     def show
-        @conversation = Conversation.find(params[:id])
-        render json: @conversation.as_json(include: [:messages])
-      end
+      @conversation = Conversation.find(params[:id])
+      render json: @conversation.as_json(include: [:messages])
+    end
   
       def create
         sender_id = params.dig(:conversation, :sender_id)
