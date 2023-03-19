@@ -27,7 +27,9 @@ class ChatChannel < ApplicationCable::Channel
     end
   end
 
-  private def render_message(message)
+  private 
+  
+  def render_message(message)
     message.content
   end
 end

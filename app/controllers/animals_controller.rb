@@ -1,66 +1,50 @@
 class AnimalsController < ApplicationController
   include ActionController::Cookies
 
-  # Get all animals and their comments, including replies
   def index
     animals = Animal.all.includes(:comments)
     render json: animals.as_json(include: { comments: { include: :replies } })
   end
-
-  # Get an animal by ID and its comments, including replies
+    
   def show
     animal = Animal.includes(comments: [:replies]).find_by(id: params[:id])
     render json: animal
   end
 
-  # Create a new animal
   def create
-    animal = Animal.create(animal_params)
-    render json: animal, status: :created
+  animal = Animal.create(animal_params)
+  render json: animal, status: :created
   end
-
-  # Update the likes for an animal
+  
   def update
     animal = Animal.find(params[:id])
     user_id = params[:user_id]
     like = animal.likes.find_by(user_id: user_id)
-
-    # If the user has already liked the animal, remove the like
+  
     if like
       like.destroy
-    # If the user has not liked the animal, add a new like
     else
       like = animal.likes.create(user_id: user_id)
     end
-
-    # Reload the animal to get the updated count of likes and render the updated animal
-    animal.reload
+  
+    animal.reload # To get the updated count of likes
     render json: animal, include: :user
   end
 
-  # Update the likes count for an animal
   def update_likes
     animal = Animal.find(params[:animal_id])
     user_id = params[:user_id]
     like = animal.likes.find_by(user_id: user_id)
-
-    # If the user has already liked the animal, remove the like
+  
     if like
       like.destroy
-    # If the user has not liked the animal, add a new like
     else
       like = animal.likes.create(user_id: user_id)
     end
-
-    # Render the updated likes count for the animal
+  
     render json: { likes_count: animal.likes.count }
   end
-
-  private def animal_params
-    params.require(:animal).permit(:name, :species, :description, :image_url)
-  end
-end
-
+  
   ####################
   #      COMMENTS    #
   ####################
