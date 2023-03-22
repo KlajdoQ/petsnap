@@ -1,4 +1,3 @@
-
 class ConversationsController < ApplicationController
   def index
     begin
@@ -36,6 +35,7 @@ class ConversationsController < ApplicationController
   
     private
   
+    
     def conversation_params
       params.require(:conversation).permit(:sender_id, :receiver_id)
     end
