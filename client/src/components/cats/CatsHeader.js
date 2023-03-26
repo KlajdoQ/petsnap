@@ -9,10 +9,9 @@ width:190px;
 padding:10px;
 font-weight: bold;
 font-size: 20px;
-margin-top:20px;
 border-radius: 5px;
 text-align: center;
-margin-left:100px;
+margin-left:10px;
 margin-bottom:20px;`
 
 

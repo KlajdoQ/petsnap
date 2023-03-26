@@ -2,9 +2,10 @@ import React, { useEffect} from 'react'
 import AnimalList from './AnimalList'
 import styled from 'styled-components'
 import CatSection from '../cats/CatSection'
+import DogSection from '../dogs/DogSection'
 import AnimalForm from './AnimalForm'
 import './Content.css'
-import ChatModal from './ChatModal'
+
 
 export default function Content({newMessage, setNewMessage, search, animals, setAnimals, addNewAnimal, setUser}) {
   
@@ -25,13 +26,14 @@ export default function Content({newMessage, setNewMessage, search, animals, set
     <div className="content-box">
       <AnimalForm addNewAnimal={addNewAnimal} animals={animals} setAnimals={setAnimals}/>
       <ContentDiv >
+        <DogSection/>
         <AnimalList 
             animals={filteredAnimals} 
             setAnimals={setAnimals}
             setUser={setUser}
             newMessage={newMessage}
             setNewMessage={setNewMessage}/>
-        {/* <CatSection/> */}
+        <CatSection/>
      
       </ContentDiv>
     </div>

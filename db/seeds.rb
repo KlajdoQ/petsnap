@@ -22,7 +22,7 @@ Animal.create(
     image: "https://images.unsplash.com/photo-1600077029182-92ac8906f9a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     breed: "Corgi",
     hobbies: "Going on walks",
-    likes: 1,
+    likes: [],
     user_id: 1
   )
   
@@ -31,7 +31,7 @@ Animal.create(
     image: "https://images.unsplash.com/photo-1592652426689-4e4f12c4aef5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     breed: "Siamese",
     hobbies: "Sleeping in sunbeams",
-    likes: 6,
+    likes: [],
     user_id: 1
   )
   
@@ -40,7 +40,7 @@ Animal.create(
     image: "https://images.unsplash.com/photo-1502339231458-411886a664c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     breed: "Calico",
     hobbies: "Playing with toys",
-    likes: 7,
+    likes: [],
     user_id: 1
   )
   
@@ -49,7 +49,7 @@ Animal.create(
     image: "https://images.unsplash.com/photo-1558619819-fc2fa628fe77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     breed: "German Shepherd",
     hobbies: "Playing with toys",
-    likes: 8,
+    likes: [],
     user_id: 1
   )
   
@@ -58,7 +58,7 @@ Animal.create(
     image: "https://images.unsplash.com/photo-1496806195556-91bdded94209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     breed: "Bengal",
     hobbies: "Hunting birds",
-    likes: 9,
+    likes: [],
     user_id: 1
   )
   
@@ -67,7 +67,7 @@ Animal.create(
     image: "https://unsplash.com/photos/zc4MEZMdXhc",
     breed: "Siberian Husky",
     hobbies: "Running",
-    likes: 0,
+    likes: [],
     user_id: 1
   )
   
@@ -76,7 +76,7 @@ Animal.create(
     image: "https://images.unsplash.com/photo-1601321525554-751e0420d97e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80",
     breed: "Persian",
     hobbies: "Being pampered",
-    likes: 2,
+    likes: [],
     user_id: 1
   )
   
@@ -85,7 +85,7 @@ Animal.create(
     image: "https://images.unsplash.com/photo-1626435872788-31f0fe12442a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1118&q=80",
     breed: "Dalmatian",
     hobbies: "Playing with other dogs",
-    likes: 3,
+    likes: [],
     user_id: 1
   )
 puts 'animals seeded'

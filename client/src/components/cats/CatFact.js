@@ -12,7 +12,7 @@ export default function CatFact({ fact }) {
   return (
         // Use the styled component to render the fact
     <CatFactDiv>
-        {fact.text}
+        {fact.fact}
     </CatFactDiv>
   )
 }

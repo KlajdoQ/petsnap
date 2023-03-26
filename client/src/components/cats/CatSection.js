@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import CatFact from './CatFact'
 import CatsHeader from './CatsHeader'
 import styled from 'styled-components'
+import catFacts from './catsFacts.json'
 
 
 // Create a functional component for the CatFactsList
@@ -10,11 +11,9 @@ export default function CatFactsList() {
   const [facts, setFacts] = useState([])
 
   // Use useEffect hook to fetch the facts from an API
-  useEffect(() =>{
-    fetch('https://cat-fact.herokuapp.com/facts')
-    .then((response) =>response.json())
-    .then(setFacts)
-  },[])
+  useEffect(() => {
+    setFacts(catFacts.catFacts);
+  }, []);
 
   // Render the Wrapper component which contains the CatsHeader and the List of CatFacts
   return ( 
@@ -22,7 +21,7 @@ export default function CatFactsList() {
       <CatsHeader />
       <List>
         {facts.map(fact => (
-          <CatFact key={fact.text} fact={fact}/>
+          <CatFact key={fact} fact={fact}/>
         ))}
       </List>
     </Wrapper>
@@ -33,11 +32,18 @@ export default function CatFactsList() {
 *   STYLED COMPONENTS          *
 *******************************/
 const Wrapper = styled.div`
-  width: 400px;
-  height: 530px;
-  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:top;
+  flex-direction:column;
+  width: 360px;
+  border-radius:5px;
   margin-left:60px;
+  margin-top:-120px;
   background-color:white;
+  padding:20px;
+  height: 600px;
+  box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.3);
   @media (max-width:600px) {
     display:none;
   }
