@@ -37,8 +37,8 @@ const Wrappers = styled.div`
   border-radius:5px;
   background-color:white;
   box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.3);
-  margin-right:60px;
-  margin-top:-120px;
+  margin-top:60px;
+  margin-left:80px;
   @media (max-width:600px) {
     display:none;
   }

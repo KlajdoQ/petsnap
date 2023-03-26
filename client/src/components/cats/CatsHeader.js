@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// Define a styled component for the header
+
 const Header = styled.div 
 ` background-color: rgb(237, 126, 126);
 color:white;

@@ -5,6 +5,7 @@ import CatSection from '../cats/CatSection'
 import DogSection from '../dogs/DogSection'
 import AnimalForm from './AnimalForm'
 import './Content.css'
+import AnimalPictures from '../dailyAnimal/AnimalPictures'
 
 
 export default function Content({newMessage, setNewMessage, search, animals, setAnimals, addNewAnimal, setUser}) {
@@ -26,15 +27,17 @@ export default function Content({newMessage, setNewMessage, search, animals, set
     <div className="content-box">
       <AnimalForm addNewAnimal={addNewAnimal} animals={animals} setAnimals={setAnimals}/>
       <ContentDiv >
-        <DogSection/>
+        <AnimalPictures/>
         <AnimalList 
             animals={filteredAnimals} 
             setAnimals={setAnimals}
             setUser={setUser}
             newMessage={newMessage}
             setNewMessage={setNewMessage}/>
-        <CatSection/>
-     
+        <div>
+          <CatSection/>
+          <DogSection/>
+        </div>
       </ContentDiv>
     </div>
   )
