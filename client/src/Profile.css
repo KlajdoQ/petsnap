@@ -1,0 +1,11 @@
+.avatar {
+    width:160px;
+}
+.edit-profile {
+    text-align: center;
+    margin:40px;
+    border:2px solid black;
+}
+.container {
+    height:100vh;
+}

@@ -1,0 +1,29 @@
+.animalDiv {
+background-color: white;
+  margin-bottom:20px;
+  border: 1px solid rgb(233, 227, 227);
+  width: 450px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  position: relative;
+}
+@media (max-width:600px) {
+  .animalDiv {
+    width:350px;
+  margin-top:40px;
+  }
+}
+
+.animalImg {
+    width: 100%;
+    height: 290px;
+}
+.animalLikes {
+    text-align: center;
+    border: 2px solid rgb(150, 144, 144);
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}

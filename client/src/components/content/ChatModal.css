@@ -1,0 +1,25 @@
+.chatModal {
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+}
+.section {
+    width:300px;
+}
+/* ChatModal.css */
+.currentUserMessage,
+.authorMessage {
+  padding: 1px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.currentUserMessage {
+  background-color: #ffa900;
+  color: white;
+}
+
+.authorMessage {
+  background-color: #eee;
+  color: black;
+}
