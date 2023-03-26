@@ -50,14 +50,12 @@ export default function AnimalForm({addNewAnimal}) {
   const userImage = localStorage.getItem("userImage");
   return (
     <>
-    {/* Rendering the button to open the modal and the modal itself*/}
     <div className='usrimg-search'>
     {userImage && (
             <img className="user-img" src={userImage} alt="User" />
           )}    
       <input onClick={handleShow} variant="primary" className="search-box"type="text" placeholder='Start a post'/>
     </div>
-    {/* Modal component to display the form to add a new animal*/}
     <Modal
         show={show}
         onHide={handleClose}

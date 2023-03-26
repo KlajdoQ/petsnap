@@ -1,8 +1,8 @@
 import React , {useState} from 'react'
 import './Profile.css'
-import Header from './components/header/Header'
+import Header from '../components/header/Header'
 import { useContext } from 'react';
-import { UserContext } from './components/contexts/UserContext'
+import { UserContext } from '../components/contexts/UserContext'
 
 
 export default function Profile({setUser}) {
@@ -130,13 +130,6 @@ export default function Profile({setUser}) {
               />
             </div>
           </div>
-          {/* 
-          <div className="form-group">
-            <label className="col-md-3 control-label">Confirm password:</label>
-            <div className="col-md-8">
-              <input className="form-control" type="password" value="11111122333"/>
-            </div>
-          </div> */}
           <div className="form-group">
             <label className="col-md-3 control-label"></label>
             <div className="col-md-8">

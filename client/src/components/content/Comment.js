@@ -1,4 +1,4 @@
-// components/Comments.js
+
 import React, { useState } from 'react';
 import ChatModal from './ChatModal';
 

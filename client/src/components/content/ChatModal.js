@@ -114,7 +114,6 @@ const ChatModal = ({
                   data-mdb-perfect-scrollbar="true"
                   style={{ position: "relative", height: "300px" }}
                 >
-                  {/* <p>Message 1 </p> */}
                   {messages.map((message) => (
                     <div
                       key={message.messageId}

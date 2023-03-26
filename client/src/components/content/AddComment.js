@@ -53,8 +53,7 @@ export default function AddComment({ newMessage, setNewMessage, animal, setAnima
   }
 
 
-  
-  // function to show the comments when the comment is clicked
+
   function showCommentReplies(commentIndex) {
     setShowReply((prev) => {
       let isCommentShown = { ...prev };
@@ -71,12 +70,11 @@ export default function AddComment({ newMessage, setNewMessage, animal, setAnima
     }
   }
   
-  //function to assign the state change to the reply
+  
   function handleReplyChange(e) {
     setNewReply(e.target.value);
   }
 
-  // update the reply state in the parent component with a new reply and also update the backend
   function handleReplySubmit(e, commentIndex) {
     e.preventDefault();
     if (newReply) {

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import Paw from '../images/paw.png'
 import AddComment from './AddComment'
 import ShareButton from './ShareButton'

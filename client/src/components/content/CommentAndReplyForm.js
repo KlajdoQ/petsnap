@@ -27,7 +27,6 @@ export default function CommentAndReplyForm({
   handleCommentSubmit,
   animal,
   setAnimals,
-  likeComment,
   likedComments,
   handleLikeComments,
   showCommentReplies,
@@ -38,12 +37,10 @@ export default function CommentAndReplyForm({
   newComment,
   handleCommentDelete,
   user_id,
-  setUser,
   newMessage,
   setNewMessage,
 }) {
   const { user } = useContext(UserContext);
-  const userImage = localStorage.getItem("userImage");
 
   const [commentAuthors, setCommentAuthors] = useState({});
   const [users, setUsers] = useState([]);
@@ -111,10 +108,8 @@ export default function CommentAndReplyForm({
     setCommentAuthors(authors);
   }, [users]);
 
-  // Generate unique IDs for each comment
   const generateCommentId = (index) => `comment-${index}`;
 
-  // Generate unique IDs for each comment like
   const generateCommentLikeId = (commentIndex) =>
     `comment-${commentIndex}-like`;
   const generateCommentReplyId = (commentIndex, replyIndex) =>
@@ -171,9 +166,7 @@ export default function CommentAndReplyForm({
                     }
                   >
                     <Button>
-                              {/* <div className='author'>
-                                {userImage && (<img className="commentator" src={userImage} alt="User"/>)}   
-                                </div>  */}
+                             
                       {commentAuthors[comment.user_id] ||
                         `User ${comment.user_id}`}
                     </Button>
@@ -195,12 +188,10 @@ export default function CommentAndReplyForm({
               />
             )}
 
-            {/* {selectedUser && <UserDetails show={show} handleClose={handleClose} user_id={selectedUser} />} */}
             <LikeReply
               key={generateCommentLikeId(commentIndex)}
               onClick={() => handleLikeComments(commentIndex)}
             >
-              {/* Display a heart icon depending on whether the comment has been liked */}
               <div className="likeBtn" >
               {likedComments.includes(commentIndex) ? "♥" : "♡"} Like
               </div>
@@ -246,7 +237,6 @@ export default function CommentAndReplyForm({
         ))}
 
       {/* If `showComment` is truthy and there is text on the textarea, render the new comment */}
-      {/* {showComment && newComment && <NewReplyLi key="new-comment">{newComment}</NewReplyLi>} */}
       <div className="comment-form">
         <textarea
           type="text"

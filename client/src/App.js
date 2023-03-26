@@ -1,24 +1,10 @@
-// useEffect(() => {
-//   if (user) {
-//     fetch("http://localhost:3000/conversations")
-//       .then((response) => response.json())
-//       .then((data) => {
-//       })
-//       .catch((error) => {
-//         console.error(error);
-//       });
-//   }
-// }, [user]);
-
-  
-  import React, {useState, useEffect} from 'react';
-  import './App.css'
+  import React, {useState} from 'react';
   import Header from './components/header/Header'
   import Content from './components/content/Content'
   import Footer from './components/Footer'
-  import Login from './Login'
-  import SignUp from './SignUp'
-  import Profile from './Profile'
+  import Login from './Auth/Login'
+  import SignUp from './Auth/SignUp'
+  import Profile from './Auth/Profile'
   import {Routes, Route} from "react-router-dom"
   import { UserContext } from './components/contexts/UserContext'
   import ChatModal from './components/content/ChatModal'

@@ -4,14 +4,11 @@ import styled from 'styled-components'
 
 
 export default function AnimalList({ newMessage, setNewMessage,animals, addLikes ,setAnimals , addNewAnimal, setUser}) {
-    // displayCount state to determine how many animals are displayed
   const [displayCount, setDisplayCount] = useState(5)
 
-    // allAnimals array maps over the first 5 animals or the setDisplayCount 
   const allanimals = animals
     .slice(0, displayCount)
     .map((animal) => (
-            // For each animal, return a new AnimalDetail component with specific props.
       <AnimalDetail 
         animal={animal}
         key={animal.id}
@@ -25,12 +22,10 @@ export default function AnimalList({ newMessage, setNewMessage,animals, addLikes
     ))
 
   
-    // Show 5 more animals when 'show more' button is clicked
   function showMore() {
     setDisplayCount(displayCount + 5)
   }
 
-    // Return the ListOfAnimals component that contains all animal detail components.
   return (
     <ListOfAnimals>
       <>
