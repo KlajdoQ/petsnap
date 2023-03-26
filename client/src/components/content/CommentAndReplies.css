@@ -11,6 +11,7 @@
     position:relative;
     margin-left:30px;
 }
+
 .author {
     width:30px;
     margin-left:20px;
@@ -42,4 +43,37 @@
 }
 .likeBtn {
     margin-left:10px;
+}
+
+.chatBubble {
+    padding:15px;
+    margin:20px;
+    
+}
+.chatBtn {
+    border:none;
+    color:white;
+    background-color: rgb(233, 162, 75);
+    padding:5px;
+    width:60px;
+    font-size:16px;
+    position:absolute;
+    right:10px;
+    top:55px;
+    margin:5px;
+    
+}
+.sendChat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    padding:10px;
+}
+.authorsName {
+ font-size:14px;
+ border:none;
+ background-color: white;
+ color:rgb(51, 65, 192);
+ margin-left:-20px;
 }

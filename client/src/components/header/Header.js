@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Search from './Search'
-import Logo from '../images/logo.png'
+import Logo from '../images/logo-color2.png'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import './Header.css'
@@ -87,7 +87,7 @@ export default function Header({ search, setSearch, setUser }) {
 *******************************/
 
 const LogoImg = styled.img`
-  width:140px;
+  width:160px;
   @media (max-width:600px) {
     width:100px;
     position: absolute;

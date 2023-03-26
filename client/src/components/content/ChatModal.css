@@ -23,3 +23,20 @@
   background-color: #eee;
   color: black;
 }
+
+.closeBtn {
+  border:none;
+  background-color: rgb(218, 143, 51);
+  color:white;
+  margin-left:5px;
+}
+.minimizeBtn {
+  position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border:none;
+    background-color: transparent !important;
+}
+.minimizeBtn img {
+  width:80px;
+}

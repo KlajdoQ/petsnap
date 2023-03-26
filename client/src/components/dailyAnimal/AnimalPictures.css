@@ -34,6 +34,9 @@ margin-bottom:20px;
     color:rgb(228, 56, 117);
     text-decoration: underline;
 }
+.quacker {
+    height:125px;
+}
 @media (max-width:600px) {
     .featured-animal {
         display:none;

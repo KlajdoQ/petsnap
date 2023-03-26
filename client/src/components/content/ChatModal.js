@@ -1,7 +1,7 @@
 import React, { useState, useEffect , useCallback} from "react";
 import createChatChannel from "../javascript/channels/chat_channel";
 import "./ChatModal.css";
-
+import ChatLogo from '../images/chatBtn.png'
 
 const ChatModal = ({
   currentUser,
@@ -9,7 +9,6 @@ const ChatModal = ({
   handleClose,
   handleChatButtonClick,
   newMessage,
-  setNewMessage,
   show
 }) => {
   
@@ -92,67 +91,84 @@ const ChatModal = ({
   }, [inputValue, currentUser, chatChannel, handleReceivedMessage, author]);
   
 
+const [isMinimized, setIsMinimized] = useState(false);
 
+function minimize() {
+  setIsMinimized(!isMinimized);
+}
   return (
     <>
     {show && (
-
-      <section style={{ backgroundColor: "#eee" }} className="section">
-        <div className="chatModal py-5">
-          <div className="">
-            <div className="">
-              <div className="card">
-                <div
-                  className="card-header d-flex justify-content-between align-items-center p-3"
-                  style={{ borderTop: "4px solid #ffa900" }}
-                >
-                  <h5 className="mb-0">Chat </h5>
-                  <button onClick={handleClose}>Close</button>
-                </div>
-                <div
-                  className="card-body"
-                  data-mdb-perfect-scrollbar="true"
-                  style={{ position: "relative", height: "300px" }}
-                >
-                  {messages.map((message) => (
-                    <div
-                      key={message.messageId}
-                      className={
-                        message.user_id === currentUser.id
-                          ? "currentUserMessage"
-                          : "authorMessage"
-                      }
-                    >
-                      <p> {message.content}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="card-footer text-muted d-flex justify-content-start align-items-center p-3">
-                  <div className="input-group mb-0">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Type message"
-                      aria-label="Recipient's username"
-                      aria-describedby="button-addon2"
-                      value={inputValue}
-                      onChange={handleInputChange}
-                    />
-                    <button
-                      className="btn btn-warning"
-                      type="button"
-                      style={{ paddingTop: ".55rem" }}
-                      onClick={handleSendMessage}
-                    >
-                      Send
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     <section style={{ backgroundColor: "#eee" }} className="section">
+     {!isMinimized && (
+       <div className="chatModal py-5">
+         <div className="">
+           <div className="">
+             <div className="card">
+               <div
+                 className="card-header d-flex justify-content-between align-items-center p-3"
+                 style={{ borderTop: "4px solid #ffa900" }}
+               >
+                 <h5 className="mb-0">Chat </h5>
+                 <div>
+                   <button className="closeBtn" onClick={minimize}>
+                     -
+                   </button>
+                   <button className="closeBtn" onClick={handleClose}>
+                     X
+                   </button>
+                 </div>
+               </div>
+               <div
+                 className="card-body"
+                 data-mdb-perfect-scrollbar="true"
+                 style={{ position: "relative", height: "300px" }}
+               >
+                 {messages.map((message) => (
+                   <div
+                     key={message.messageId}
+                     className={
+                       message.user_id === currentUser.id
+                         ? "currentUserMessage"
+                         : "authorMessage"
+                     }
+                   >
+                     <p> {message.content}</p>
+                   </div>
+                 ))}
+               </div>
+               <div className="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                 <div className="input-group mb-0">
+                   <input
+                     type="text"
+                     className="form-control"
+                     placeholder="Type message"
+                     aria-label="Recipient's username"
+                     aria-describedby="button-addon2"
+                     value={inputValue}
+                     onChange={handleInputChange}
+                   />
+                   <button
+                     className="btn btn-warning"
+                     type="button"
+                     style={{ paddingTop: ".55rem" }}
+                     onClick={handleSendMessage}
+                   >
+                     Send
+                   </button>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     )}
+     {isMinimized && (
+       <button className="minimizeBtn" onClick={minimize}>
+         <img src={ChatLogo} alt="chat-logo"/>
+       </button>
+     )}
+   </section>
     )}
     </>
   );

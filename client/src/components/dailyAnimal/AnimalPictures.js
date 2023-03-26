@@ -14,7 +14,7 @@ export default function AnimalPictures() {
         </div>
         <div>
             <h2>Quackers</h2>
-            <img className="img"src="https://random-d.uk/api/randomimg" alt="fox" />
+            <img className="img quacker"src="https://random-d.uk/api/randomimg" alt="fox" />
             <div>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </div>
         </div>
         <div>

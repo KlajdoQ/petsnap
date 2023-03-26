@@ -141,14 +141,16 @@ export default function CommentAndReplyForm({
                   onClick={() => handleCommentAuthorClick(comment.user_id)}
                 >
                   <HtmlTooltip
+                  
                     title={
-                      <React.Fragment>
-                        <Typography color="inherit">
-                          Send a message to{" "}
+                      <React.Fragment  className='sendChat'>
+                        <Typography color="inherit" className="chatBubble">
+                          Send a message to<strong>{" "}</strong>
                           {commentAuthors[comment.user_id] ||
                             `User ${comment.user_id}`}
                         </Typography>
                         <button
+                        className="chatBtn"
                           onClick={() => {
                             handleChatButtonClick(
                               {
@@ -165,11 +167,11 @@ export default function CommentAndReplyForm({
                       </React.Fragment>
                     }
                   >
-                    <Button>
-                             
+                    <button className="authorsName">
+                      
                       {commentAuthors[comment.user_id] ||
                         `User ${comment.user_id}`}
-                    </Button>
+                    </button>
                   </HtmlTooltip>
                 </div>
                 <div className="userImgComment">{comment.comment}</div>
