@@ -30,6 +30,8 @@ const ChatModal = ({
           const receivedMessage = {
             ...message,
             messageId: Date.now() + Math.random(),
+            timestamp: new Date().toLocaleTimeString(),
+
           };
   
           handleChatButtonClick(author, true, false, receivedMessage);
@@ -74,6 +76,8 @@ const ChatModal = ({
         content: inputValue,
         user_id: currentUser?.id,
         messageId: Date.now() + Math.random(),
+        timestamp: new Date().toLocaleTimeString(),
+
       };
       setMessages((prevMessages) => [...prevMessages, newSentMessage]);
   
@@ -86,7 +90,6 @@ const ChatModal = ({
       }
   
       setInputValue('');
-      console.log('New message sent:', newSentMessage.content);
     }
   }, [inputValue, currentUser, chatChannel, handleReceivedMessage, author]);
   
@@ -122,7 +125,7 @@ function minimize() {
                <div
                  className="card-body"
                  data-mdb-perfect-scrollbar="true"
-                 style={{ position: "relative", height: "300px" }}
+                 style={{ position: "relative", height: "300px", overflowY: "scroll" }}
                >
                  {messages.map((message) => (
                    <div
@@ -133,7 +136,8 @@ function minimize() {
                          : "authorMessage"
                      }
                    >
-                     <p> {message.content}</p>
+                     <p className="displayedMessage"> {message.content} <span className="timestamp">{message.timestamp}</span></p> 
+
                    </div>
                  ))}
                </div>

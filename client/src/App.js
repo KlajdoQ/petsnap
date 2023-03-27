@@ -9,7 +9,7 @@
   import { UserContext } from './components/contexts/UserContext'
   import ChatModal from './components/content/ChatModal'
   import { CableProvider } from './components/content/CableContext';
-
+  import './App.css'
 
 export default function App() {
   const [animals, setAnimals] = useState([]);

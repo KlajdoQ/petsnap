@@ -9,7 +9,7 @@
 /* ChatModal.css */
 .currentUserMessage,
 .authorMessage {
-  padding: 1px;
+  padding: 5px;
   margin: 5px;
   border-radius: 5px;
 }
@@ -39,4 +39,12 @@
 }
 .minimizeBtn img {
   width:80px;
+}
+.timestamp {
+  font-size:12px;
+}
+.displayedMessage {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
 }
