@@ -13,6 +13,7 @@ class MessageController < ApplicationController
     messages = Message.where(user_id: params[:user_id])
     render json: messages
   end
+  
   private
 
   def message_params
