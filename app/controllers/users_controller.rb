@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     render json: user.as_json(only: [:id, :email, :full_name], methods: [:image_url, :image])
   end
 
-
   def create
     user = User.new(user_params)
     if user.save
