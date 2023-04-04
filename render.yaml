@@ -11,7 +11,8 @@ services:
     startCommand: bundle exec rails s -p $PORT
     healthCheckPath: "/"
     envVars:
-      RAILS_SERVE_STATIC_FILES: "true"
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
     automaticBuilds:
       - type: github
         sourceBranch: main
