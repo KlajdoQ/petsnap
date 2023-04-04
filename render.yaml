@@ -2,8 +2,8 @@ services:
   - name: web
     env:
       RAILS_ENV: production
-      SECRET_KEY_BASE: <your secret key base>
-      DATABASE_URL: <your database URL>
+      SECRET_KEY_BASE: 7bb030ab5f678bbd658762142f83f62d
+      DATABASE_URL: <%= ENV['DATABASE_URL'] %>
     buildCommand: |
       cd client && npm install && npm run build
       cd .. && bundle install
