@@ -5,6 +5,8 @@
 .error-msg {
     background-image: url('./components/images/login-page.avif');
     position:absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
     top:80px;
     left:0px;
     font-size:90px;
