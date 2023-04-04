@@ -13,9 +13,3 @@ services:
     envVars:
       - key: RAILS_SERVE_STATIC_FILES
         value: "true"
-    automaticBuilds:
-      - type: github
-        sourceBranch: main
-        buildCommand: |
-          cd client && npm install && npm run build
-          cd .. && bundle install
