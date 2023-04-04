@@ -1,0 +1,19 @@
+services:
+  - name: web
+    env:
+      RAILS_ENV: production
+      SECRET_KEY_BASE: <your secret key base>
+      DATABASE_URL: <your database URL>
+    buildCommand: |
+      cd client && npm install && npm run build
+      cd .. && bundle install
+    startCommand: bundle exec rails s -p $PORT
+    healthCheckPath: "/"
+    envVars:
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+    automaticBuilds:
+      - sourceBranch: main
+        buildCommand: |
+          cd client && npm install && npm run build
+          cd .. && bundle install
