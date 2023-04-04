@@ -1,6 +1,7 @@
 services:
   - name: web
     type: web
+    runtime: "ruby"
     buildCommand: |
       cd client && npm install && npm run build
       cd .. && bundle install
