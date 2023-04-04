@@ -84,3 +84,5 @@ production:
   database: petsnap_production
   username: petsnap
   password: <%= ENV["PETSNAP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
