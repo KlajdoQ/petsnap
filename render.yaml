@@ -1,5 +1,6 @@
 services:
   - name: web
+    type: web
     env:
       RAILS_ENV: production
       SECRET_KEY_BASE: 7bb030ab5f678bbd658762142f83f62d
