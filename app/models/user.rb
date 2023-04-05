@@ -15,4 +15,5 @@ class User < ApplicationRecord
       rails_blob_path(image, only_path: true)
     end
   end
+  
 end
