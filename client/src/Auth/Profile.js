@@ -144,6 +144,5 @@ export default function Profile({setUser}) {
 </div>
 <hr></hr>
   </>
-
   )
 }
