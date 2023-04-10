@@ -12,7 +12,7 @@ import './Animal.css'
 export default function Animal({animal,setAnimals,setUser, addLikes,newMessage,setNewMessage,}) {
     
     const { user} = useContext(UserContext); 
-    const { id, name, image, hobbies, breed, likes, comments } = animal;
+    const { name, image, hobbies, breed, likes, comments } = animal;
     const [showComments, setshowComments] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
   

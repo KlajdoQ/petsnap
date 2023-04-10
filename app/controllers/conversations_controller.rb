@@ -1,4 +1,4 @@
-# controllers/conversations_controller.rb
+
 class ConversationsController < ApplicationController
   def index
     begin
