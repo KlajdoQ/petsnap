@@ -22,61 +22,57 @@ export default function App() {
     setAnimals([newAnimal, ...animals]);
   }
 
-
-
   return (
     <CableProvider>
-
-    <UserContext.Provider value={{ user, setUser }} >
-      <div className="app">
-        
-        <Routes>
-          <Route
-            path="/login"
-            element={<Login setUser={setUser} />}
-          />
-          <Route
-            path="/signup"
-            element={<SignUp setUser={setUser} />}
-          />
+      <UserContext.Provider value={{ user, setUser }} >
+        <div className="app">
+          <Routes>
             <Route
-            path="/profile"
-            element={<Profile setUser={setUser} />}/>
-          <Route
-            path="/"
-            element={user ? (
-              <>
-              <Header 
-                search={search} 
-                setSearch={setSearch} 
-                setUser={setUser}/>
-              <Content
-                search={search}
-                animals={animals}
-                setAnimals={setAnimals}
-                addNewAnimal={addNewAnimal}
-                setUser={setUser}
-                newMessage={newMessage}
-                setNewMessage={setNewMessage}
-              />
-              <ChatModal />
-              <Footer />
-              </>
-            ) : (
-              <div className="login-to-view" >
+              path="/login"
+              element={<Login setUser={setUser} />}
+            />
+            <Route
+              path="/signup"
+              element={<SignUp setUser={setUser} />}
+            />
+              <Route
+              path="/profile"
+              element={<Profile setUser={setUser} />}/>
+            <Route
+              path="/"
+              element={user ? (
+                <>
                 <Header 
-                    addNewAnimal={addNewAnimal} 
-                    search={search} 
-                    setSearch={setSearch} 
-                    setUser={setUser}/>
-                <div className="error-msg">You must be <br></br>logged in <br></br>to view this <br></br>content!</div>
-              </div>
-             
-            )}
-          />
-        </Routes>
-      </div>
-    </UserContext.Provider>
+                  search={search} 
+                  setSearch={setSearch} 
+                  setUser={setUser}/>
+                <Content
+                  search={search}
+                  animals={animals}
+                  setAnimals={setAnimals}
+                  addNewAnimal={addNewAnimal}
+                  setUser={setUser}
+                  newMessage={newMessage}
+                  setNewMessage={setNewMessage}
+                />
+                <ChatModal />
+                <Footer />
+                </>
+              ) : (
+                <div className="login-to-view" >
+                  <Header 
+                      addNewAnimal={addNewAnimal} 
+                      search={search} 
+                      setSearch={setSearch} 
+                      setUser={setUser}/>
+                  <div className="error-msg">You must be <br></br>logged in <br></br>to view this <br></br>content!</div>
+                </div>
+              
+              )}
+            />
+          </Routes>
+        </div>
+      </UserContext.Provider>
     </CableProvider>
   );
 }
