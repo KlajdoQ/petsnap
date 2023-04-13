@@ -5,17 +5,13 @@ import styled from 'styled-components'
 import catFacts from './catsFacts.json'
 
 
-// Create a functional component for the CatFactsList
 export default function CatFactsList() {
-    // Use useState hook to manage the state for facts
   const [facts, setFacts] = useState([])
 
-  // Use useEffect hook to fetch the facts from an API
   useEffect(() => {
     setFacts(catFacts.catFacts);
   }, []);
 
-  // Render the Wrapper component which contains the CatsHeader and the List of CatFacts
   return ( 
     <Wrapper>
       <CatsHeader />
