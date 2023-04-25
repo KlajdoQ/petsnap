@@ -1,23 +1,23 @@
-import React, {useState, useEffect} from 'react'
-import Search from './Search'
-import Logo from '../images/logo-color2.png'
-import {Link} from 'react-router-dom'
-import styled from 'styled-components'
-import './Header.css'
-import ChatModal from '../content/ChatModal'
+import React, { useState, useEffect } from "react";
+import Search from "./Search";
+import Logo from "../images/logo-color2.png";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import "./Header.css";
+import ChatModal from "../content/ChatModal";
 
-import { useContext } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 export default function Header({ search, setSearch, setUser }) {
-  const { user = null } = useContext(UserContext); 
+  const { user = null } = useContext(UserContext);
   const userImage = localStorage.getItem("userImage");
 
   const [showChatModal, setShowChatModal] = useState(false);
   const [hasReceivedMessage, setHasReceivedMessage] = useState(false);
 
   const handleLogout = () => {
-    fetch("http://localhost:3000/logout", { method: 'DELETE' })
+    fetch("http://localhost:3000/logout", { method: "DELETE" })
       .then(() => {
         setUser(null);
       })
@@ -25,11 +25,9 @@ export default function Header({ search, setSearch, setUser }) {
   };
 
   const handleMessagesClick = () => {
-    
-        setShowChatModal(true);
-    setHasReceivedMessage(false); 
+    setShowChatModal(true);
+    setHasReceivedMessage(false);
   };
-
 
   return (
     <div className="header-div">
@@ -39,15 +37,15 @@ export default function Header({ search, setSearch, setUser }) {
       {user ? (
         <>
           <Search search={search} setSearch={setSearch} />
-          <div className='header-links'>
+          <div className="header-links">
             {hasReceivedMessage && (
-  <div className='nav-link' onClick={handleMessagesClick}>
-    ✉️ Messages
-  </div>
-)}
+              <div className="nav-link" onClick={handleMessagesClick}>
+                ✉️ Messages
+              </div>
+            )}
             {userImage && (
               <img className="userImg" src={userImage} alt="User" />
-            )}           
+            )}
             <Link to="/profile" className="nav-link">
               {user.full_name}
             </Link>
@@ -59,12 +57,12 @@ export default function Header({ search, setSearch, setUser }) {
       ) : (
         <div className="header-links">
           <button className="navBtn">
-            <Link to="/login"  className="navLink">
+            <Link to="/login" className="navLink">
               Login
             </Link>
           </button>
-          <button  className="navBtn">
-            <Link to="/signup"className="navLink" >
+          <button className="navBtn">
+            <Link to="/signup" className="navLink">
               Sign Up
             </Link>
           </button>
@@ -75,7 +73,6 @@ export default function Header({ search, setSearch, setUser }) {
           currentUser={{ id: user.id }}
           handleClose={() => setShowChatModal(false)}
           setHasReceivedMessage={setHasReceivedMessage} // pass the function to update the hasReceivedMessage state
-
         />
       )}
     </div>
@@ -83,17 +80,15 @@ export default function Header({ search, setSearch, setUser }) {
 }
 
 /*******************************
-*   STYLED COMPONENTS          *
-*******************************/
+ *   STYLED COMPONENTS          *
+ *******************************/
 
 const LogoImg = styled.img`
-  width:160px;
-  @media (max-width:600px) {
-    width:100px;
+  width: 160px;
+  @media (max-width: 600px) {
+    width: 100px;
     position: absolute;
     top: 15px;
     left: 0;
   }
-`
-
-
+`;
