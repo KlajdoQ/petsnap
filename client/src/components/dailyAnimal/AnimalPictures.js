@@ -1,7 +1,6 @@
 import React from 'react'
 import './AnimalPictures.css'
 
-
 export default function AnimalPictures() {
   return (
     < div className='featured-animal'>
