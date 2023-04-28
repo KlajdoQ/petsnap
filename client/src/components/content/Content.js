@@ -52,7 +52,6 @@ grid-template-columns: auto  auto auto;
 margin-top:30px;
 position:relative;
 ;
-
 `
 
 
