@@ -3,21 +3,13 @@ import createChatChannel from "../javascript/channels/chat_channel";
 import "./ChatModal.css";
 import ChatLogo from '../images/chatBtn.png'
 
-const ChatModal = ({
-  currentUser,
-  author,
-  handleClose,
-  handleChatButtonClick,
-  newMessage,
-  show
-}) => {
+const ChatModal = ({currentUser,author,handleClose,handleChatButtonClick,newMessage,show}) => {
   
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [chatChannel, setChatChannel] = useState(null);
 
 
-  
   const handleReceivedMessage = useCallback((message) => {
     console.log("Received message:", message);
     if (message.receiver_id === currentUser.id) {
