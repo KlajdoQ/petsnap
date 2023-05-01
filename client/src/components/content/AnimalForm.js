@@ -9,7 +9,6 @@ export default function AnimalForm({addNewAnimal}) {
   
   //Create a state to control the visibility of the modal on page load 
   const [show, setShow] = useState(false);
-  // State to store the form data
   const [formData, setFormData] = useState({
     image: '',
     name: '',
