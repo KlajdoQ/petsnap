@@ -1,7 +1,6 @@
 class AnimalsController < ApplicationController
   include ActionController::Cookies
-
-
+  
   def index
     animals = Animal.all.includes(:comments)
     render json: animals.as_json(include: { comments: { include: :replies } })
