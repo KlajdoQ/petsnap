@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export default function Footer() {
   return (
     <FooterDiv className="footer-div">
-        <p>@ 2023 Copyright: <span>klajdo-qasolli.com</span></p>
+        <p>@ 2023 Copyright: <span>klajdo-portfolio.com</span></p>
     </FooterDiv>
   )
 }
