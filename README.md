@@ -38,17 +38,7 @@ The backend was created using Ruby on Rails.
 
 API Endpoints : 
 
-Name	API EndPoint	HTTP Verb	Purpose
-Index	Users/	Get	Displays list of all users
-Show	Users/:id	Get	Shows info about one user
-Update	Animals/:id	Patch	Edits an animal
-Destroy	Comments/:id	Delete	Delete a comment
-Create	/signup	Create	Create a user
-Destroy	/logout	Destroy	Logs out user
-Create	/comments	Post	Post a comment
-Create	/reviews/:comment_id/replies	Post	Adds a new Reply
-Destroy	Comments/:comment_id	Delete	Delete a comment
-Create	/update_comment_likes	Create	Like a comment
+
 
 <img width="471" alt="image" src="https://user-images.githubusercontent.com/63808442/224517400-1e0340d8-2e52-42aa-a711-7be54b299d24.png">
 
